@@ -1,0 +1,36 @@
+.country-container {
+  background-color: #ffffff;
+  min-width: 264px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.flag-img {
+  width: 264px;
+  height: 160px;
+  align-self: center;
+}
+
+.country-name {
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  left: 24px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 26px;
+  color: #111517;
+}
+
+.country-container > p {
+  font-family: "Nunito Sans";
+  position: relative;
+  left: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  color: #111517;
+  margin-bottom: 40px;
+}

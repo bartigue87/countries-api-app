@@ -1,0 +1,129 @@
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbar {
+  position: relative;
+  left: 80px;
+  width: 480px;
+  height: 56px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar > img {
+  height: 18px;
+  width: 18px;
+  position: relative;
+  left: 32px;
+}
+
+.searchbar > input {
+  border: none;
+  position: relative;
+  left: 54px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #848484;
+  width: 300px;
+  outline: none;
+}
+
+.select-box {
+  display: flex;
+  width: 200px;
+  height: 56px;
+  flex-direction: column;
+  position: relative;
+  right: 80px;
+}
+
+.options-container {
+  background-color: #fff;
+  color: #f5f6fa;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 5px;
+  overflow: hidden;
+  order: 1;
+  position: absolute;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111517;
+}
+
+.selected {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  color: #f5f6fa;
+  position: relative;
+  order: 0;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111517;
+}
+
+.selected::after {
+  content: "";
+  background: url("../images/black-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 18px;
+  right: 10px;
+  top: 15px;
+  transition: all 0.4s;
+}
+
+.options-container.active {
+  max-height: 164px;
+  opacity: 1;
+  overflow-y: scroll;
+  position: absolute;
+  top: 48px;
+}
+
+.options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -12px;
+}
+
+.select-box .option,
+.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.option:hover {
+  background-color: #c5c5c5;
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+.radio {
+  display: none;
+}
+
+label {
+  z-index: -1;
+}
