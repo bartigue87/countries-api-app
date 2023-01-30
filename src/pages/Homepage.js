@@ -6,7 +6,9 @@ import "./Homepage.css";
 
 export default function Homepage() {
   const [countryData, setCountryData] = useState([]);
-  const [filteredCountryList, setFilteredCountryList] = useState("all");
+  const [filteredCountryList, setFilteredCountryList] = useState("");
+  const [query, setQuery] = useState("");
+  const [themeMode, setThemeMode] = useState("light");
 
   const apiUrl = "https://restcountries.com/v2/all";
 
@@ -16,44 +18,41 @@ export default function Homepage() {
       .then((data) => setCountryData(data));
   }, []);
 
-  const countryInfo = countryData.map((country) => {
-    return (
-      <Country
-        key={country.alpha2Code}
-        flag={country.flag}
-        name={country.name}
-        population={country.population}
-        region={country.region}
-        capital={country.capital}
-      />
-    );
-  });
-
-  let filteredRegionList = countryInfo.filter((country) => {
-    if (filteredCountryList === "africa") {
-      return country.region === "africa";
-    } else if (filteredCountryList === "americas") {
-      return country.region === "americas";
-    } else if (filteredCountryList === "asia") {
-      return country.region === "asia";
-    } else if (filteredCountryList === "europe") {
-      return country.region === "europe";
-    } else if (filteredCountryList === "oceania") {
-      return country.region === "oceania";
-    } else {
-      return country;
-    }
-  });
+  const countryInfo = countryData
+    .filter((country) => country.region.includes(filteredCountryList))
+    .filter((country) => country.name.toLowerCase().includes(query))
+    .map((country) => {
+      return (
+        <Country
+          key={country.alpha2Code}
+          flag={country.flag}
+          name={country.name}
+          population={country.population}
+          region={country.region}
+          capital={country.capital}
+        />
+      );
+    });
 
   function checkRegion(region) {
     setFilteredCountryList(region);
   }
 
+  function checkQuery(searchInput) {
+    setQuery(searchInput.toLowerCase());
+  }
+
+  function changeTheme(theme) {
+    setThemeMode(theme);
+  }
   return (
-    <>
-      <Header />
-      <Search filterRegion={checkRegion} />
-      <div className="main-container">{filteredRegionList}</div>
-    </>
+    <div className={`body-${themeMode}`}>
+      <Header changeTheme={changeTheme}/>
+      <Search
+        filterRegion={checkRegion}
+        checkSearch={checkQuery}
+      />
+      <div className="main-container">{countryInfo}</div>
+    </div>
   );
 }

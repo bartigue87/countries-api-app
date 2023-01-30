@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
-import searchGlass from "../images/grey-search.png";
+import searchGlass from "../images/white-search.png";
 
 export default function Search(props) {
   const [classActive, setClassActive] = useState(`options-container`);
@@ -20,7 +20,7 @@ export default function Search(props) {
     const joinedWord = firstLetterCap.concat(secondHalfWord);
     setSelected(joinedWord);
     toggleActive();
-    filterByRegion(event.target.id);
+    filterByRegion(joinedWord);
     console.log("event.target.value:", event.target);
   }
 
@@ -32,7 +32,11 @@ export default function Search(props) {
     <div className="search-container">
       <div className="searchbar">
         <img src={searchGlass} alt="magnifting glass" />
-        <input type="text" placeholder="Search for a country..." />
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          onChange={(e) => props.checkSearch(e.target.value)}
+        />
       </div>
       <div className="select-box">
         <div className={classActive}>

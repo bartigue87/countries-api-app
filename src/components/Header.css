@@ -1,11 +1,10 @@
 .header-container {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #2b3844;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #111517;
   font-family: "Nunito Sans";
   font-style: normal;
   margin-bottom: 48px;

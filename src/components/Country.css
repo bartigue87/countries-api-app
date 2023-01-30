@@ -1,5 +1,5 @@
 .country-container {
-  background-color: #ffffff;
+  background-color: #2B3844;
   min-width: 264px;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,6 @@
   font-weight: 800;
   font-size: 18px;
   line-height: 26px;
-  color: #111517;
 }
 
 .country-container > p {
@@ -31,6 +30,5 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 26px;
-  color: #111517;
   margin-bottom: 40px;
 }

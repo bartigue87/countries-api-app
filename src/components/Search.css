@@ -10,7 +10,7 @@
   left: 80px;
   width: 480px;
   height: 56px;
-  background-color: #fff;
+  background-color: #2b3844;
   display: flex;
   align-items: center;
 }
@@ -23,6 +23,7 @@
 }
 
 .searchbar > input {
+  background-color: #2b3844;
   border: none;
   position: relative;
   left: 54px;
@@ -31,9 +32,13 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #848484;
   width: 300px;
   outline: none;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff;
 }
 
 .select-box {
@@ -46,8 +51,7 @@
 }
 
 .options-container {
-  background-color: #fff;
-  color: #f5f6fa;
+  background-color: #2b3844;
   max-height: 0;
   width: 100%;
   opacity: 0;
@@ -61,14 +65,12 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #111517;
 }
 
 .selected {
-  background-color: #fff;
+  background-color: #2b3844;
   border-radius: 5px;
   margin-bottom: 8px;
-  color: #f5f6fa;
   position: relative;
   order: 0;
   font-family: "Nunito Sans";
@@ -76,12 +78,11 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #111517;
 }
 
 .selected::after {
   content: "";
-  background: url("../images/black-arrow.png");
+  background: url("../images/white-arrow.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -113,7 +114,7 @@
 }
 
 .option:hover {
-  background-color: #c5c5c5;
+  background-color: #292828;
 }
 
 .select-box label {
