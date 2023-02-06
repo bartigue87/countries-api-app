@@ -1,0 +1,62 @@
+.back-btn {
+  position: relative;
+  top: 32px;
+  left: 80px;
+  display: flex;
+  height: 40px;
+  width: 136px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #2b3844;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+.back-btn > img {
+  height: 13px;
+  width: 18px;
+}
+
+.country-data-container {
+  position: relative;
+  top: 92px;
+  height: 401px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+}
+
+.country-flag {
+  min-width: 560px;
+  height: 401px;
+  margin: 0 auto;
+}
+
+.country-right-container {
+  height: 323px;
+  max-width: 574px;
+  margin: 0 auto;
+}
+
+.country-text-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+.array-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

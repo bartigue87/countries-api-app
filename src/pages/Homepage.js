@@ -8,7 +8,6 @@ export default function Homepage() {
   const [countryData, setCountryData] = useState([]);
   const [filteredCountryList, setFilteredCountryList] = useState("");
   const [query, setQuery] = useState("");
-  const [themeMode, setThemeMode] = useState("light");
 
   const apiUrl = "https://restcountries.com/v2/all";
 
@@ -42,16 +41,10 @@ export default function Homepage() {
     setQuery(searchInput.toLowerCase());
   }
 
-  function changeTheme(theme) {
-    setThemeMode(theme);
-  }
   return (
-    <div className={`body-${themeMode}`}>
-      <Header changeTheme={changeTheme}/>
-      <Search
-        filterRegion={checkRegion}
-        checkSearch={checkQuery}
-      />
+    <div>
+      <Header />
+      <Search filterRegion={checkRegion} checkSearch={checkQuery} />
       <div className="main-container">{countryInfo}</div>
     </div>
   );

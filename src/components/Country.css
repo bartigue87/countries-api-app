@@ -1,9 +1,20 @@
 .country-container {
-  background-color: #2B3844;
+  position: relative;
+  background-color: #2b3844;
   min-width: 264px;
   display: flex;
   flex-direction: column;
   text-align: left;
+  height: 100%;
+}
+
+.transparent-click {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .flag-img {
