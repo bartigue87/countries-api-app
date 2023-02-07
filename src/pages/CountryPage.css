@@ -15,6 +15,7 @@
   background-color: #2b3844;
   gap: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .back-btn > img {
@@ -32,7 +33,7 @@
 }
 
 .country-flag {
-  min-width: 560px;
+  max-width: 560px;
   height: 401px;
   margin: 0 auto;
 }
@@ -59,4 +60,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+@media only screen and (max-width: 850px) {
+  .country-flag {
+    max-width: 330px;
+    height: 229px;
+    margin: 0 auto;
+  }
+
+  .country-data-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-text-container {
+    display: block;
+  }
+  .back-btn {
+    margin: 0 auto;
+    left: 0;
+  }
 }

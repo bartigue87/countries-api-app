@@ -22,16 +22,28 @@ export default function CountryPage() {
   let languages = [];
   let borderCountries = [];
 
-  if (countryData) {
+  if (countryData && countryData[0].currencies) {
     currencies = countryData[0].currencies.map((currency) => {
       return <p>{currency.name}</p>;
     });
+  } else {
+    currencies = <p>None</p>;
+  }
+
+  if (countryData && countryData[0].languages) {
     languages = countryData[0].languages.map((language) => {
       return <p>{language.name}</p>;
     });
+  } else {
+    languages = <p>None</p>;
+  }
+
+  if (countryData && countryData[0].borders) {
     borderCountries = countryData[0].borders.map((border) => {
       return <p>{border}</p>;
     });
+  } else {
+    borderCountries = <p>None</p>;
   }
 
   function returnHome(event) {
