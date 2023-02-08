@@ -81,4 +81,7 @@
     margin: 0 auto;
     left: 0;
   }
+  .lastEl {
+    margin-bottom: 20px;
+  }
 }

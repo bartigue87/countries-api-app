@@ -96,7 +96,7 @@ export default function CountryPage() {
                 </div>
               </div>
             </div>
-            <div className="array-container">
+            <div className="array-container lastEl">
               <strong>Border Countries: </strong> {borderCountries}
             </div>
           </div>
